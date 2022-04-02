@@ -47,12 +47,8 @@ sudo_groups = [ int(chat) for chat in os.environ.get("GROUPS").split(",")  if ch
 
 @bot.on_message(filters.command(["start"])& ~filters.edited & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
-    user = m.from_user.id if m.from_user is not None else None
-    if user is not None and user not in sudo_users:
-        await m.reply("**निकल साले**", quote=True)
-        return
-    else:     
-        editable = await m.reply_text("Hi\nPress /pyro")
+    
+    editable = await m.reply_text("Hi\nPress /pyro")
 
 @bot.on_message(filters.command(["cancel"])& ~filters.edited & (filters.chat(sudo_groups)))
 async def cancel(_, m):
@@ -68,12 +64,8 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["pyro"])&  ~filters.edited & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
-    user = m.from_user.id if m.from_user is not None else None
-    if user is not None and user not in sudo_users:
-        await m.reply("**निकल साले**", quote=True)
-        return
-    else:    
-        editable = await m.reply_text("Send txt file**")
+    
+    editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -736,7 +728,6 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("Done")     
 bot.run()
-
 
 
 
