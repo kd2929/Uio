@@ -671,9 +671,10 @@ async def account_login(bot: Client, m: Message):
                 response1 = requests.get(f'{a}', headers=headers1)
                 response2 = (response1.text).split("\n")
                 for quality in response2:
-                     "480" in str(quality):
+                    if "480" in str(quality):
                         qu = 1 + response2.index(quality)
                         break
+                     
 
                 url1 = (response1.text).split("\n")[qu]
                             
