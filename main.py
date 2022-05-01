@@ -45,24 +45,24 @@ auth_users = [ int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if 
 sudo_users = auth_users
 sudo_groups = [ int(chat) for chat in os.environ.get("GROUPS").split(",")  if chat != '']
 
-@bot.on_message(filters.command(["start"])& (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["start"])&  (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
     
     editable = await m.reply_text("Hi\nPress /pyro")
 
-@bot.on_message(filters.command(["cancel"])& (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["cancel"])&  (filters.chat(sudo_groups)))
 async def cancel(_, m):
     editable = await m.reply_text("Canceling All process Plz wait")
     global cancel
     cancel = True
     await editable.edit("cancled")
     return
-@bot.on_message(filters.command("restart")& (filters.chat(sudo_groups)))
+@bot.on_message(filters.command("restart")&   (filters.chat(sudo_groups)))
 async def restart_handler(_, m):
     await m.reply_text("Restarted!", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command(["pyro"])&  (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["pyro"])&   (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
     
     editable = await m.reply_text("Send txt file**")
@@ -376,7 +376,7 @@ async def account_login(bot: Client, m: Message):
     await m.reply_text("Done")    
     
     
-@bot.on_message(filters.command(["top"])&  (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["top"])&   (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hi im Topranker dl**")
     input: Message = await bot.listen(editable.chat.id)
@@ -506,7 +506,7 @@ async def account_login(bot: Client, m: Message):
     await m.reply_text("Done")    
     
 
-@bot.on_message(filters.command(["adda_pdf"]))
+@bot.on_message(filters.command(["adda_pdf"])& ~filters.edited)
 async def adda_pdf(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hi im Pdf Adda pdf dl**")
     input: Message = await bot.listen(editable.chat.id)
@@ -573,7 +573,7 @@ async def adda_pdf(bot: Client, m: Message):
     await m.reply_text("Done")
     
     
-@bot.on_message(filters.command(["jw"])& (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["jw"])&   (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
@@ -671,10 +671,11 @@ async def account_login(bot: Client, m: Message):
                 response1 = requests.get(f'{a}', headers=headers1)
                 response2 = (response1.text).split("\n")
                 for quality in response2:
-                    if raw_text2 in str(quality):
+                     if raw_text2 in str(quality):
                         qu = 1 + response2.index(quality)
                         break
-                     
+                    else:
+                        qu = 2
 
                 url1 = (response1.text).split("\n")[qu]
                             
