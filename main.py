@@ -638,7 +638,7 @@ async def account_login(bot: Client, m: Message):
             url = links[i][1]
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@","").replace("*","").replace(".","").strip()
             
-            if "jwplayer" in url:
+            if "classplusapp" in url:
                 headers = {
                     'Host': 'api.classplusapp.com',
                     'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgzNjkyMTIsIm9yZ0lkIjoyNjA1LCJ0eXBlIjoxLCJtb2JpbGUiOiI5MTcwODI3NzQyODkiLCJuYW1lIjoiQWNlIiwiZW1haWwiOm51bGwsImlzRmlyc3RMb2dpbiI6dHJ1ZSwiZGVmYXVsdExhbmd1YWdlIjpudWxsLCJjb3VudHJ5Q29kZSI6IklOIiwiaXNJbnRlcm5hdGlvbmFsIjowLCJpYXQiOjE2NDMyODE4NzcsImV4cCI6MTY0Mzg4NjY3N30.hM33P2ai6ivdzxPPfm01LAd4JWv-vnrSxGXqvCirCSpUfhhofpeqyeHPxtstXwe0',
@@ -661,9 +661,9 @@ async def account_login(bot: Client, m: Message):
 
 
                 headers1 = {
-                    'User-Agent': 'ExoPlayerDemo/1.4.37.1 (Linux;Android 11) ExoPlayerLib/2.14.1',
+                    'User-Agent': 'ExoPlayerDemo/1.4.39.5 (Linux;Android 11) ExoPlayerLib/2.14.1',
                     'Accept-Encoding': 'gzip',
-                    'Host': 'cdn.jwplayer.com',
+                    'Host': 'videos.classplusapp.com',
                     'Connection': 'Keep-Alive',
                 }
 
@@ -672,15 +672,22 @@ async def account_login(bot: Client, m: Message):
                 response2 = (response1.text).split("\n")
                 for quality in response2:
                     if raw_text2 in str(quality):
-                        qu = 1 + response2.index(quality)
+                        qu = response2[1 + response2.index(quality)]
                         break
                     else:
-                        qu = 2
+                        qu = response2[3]
                      
                    
                      
-
-                url1 = (response1.text).split("\n")[qu]
+                
+                url01 = a.split("?")[0].split("/")
+                del url01[-1]
+                url02 = url01.append(qu)
+                url1 = "/".join(url02)
+                
+    
+                
+                #url1 = (response1.text).split("\n")[qu]
                             
 #                 url1 = b
             else:
@@ -738,7 +745,6 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("Done")     
 bot.run()
-
 
 
 
