@@ -647,7 +647,7 @@ async def account_login(bot: Client, m: Message):
                     'api-version': '20',
                     'device-id': '5d0d17ac8b3c9f51',
                     'device-details': '2848b866799971ca_2848b8667a33216c_SDK-30',
-                    'region': 'IN'
+                    'region': 'IN',
                     'accept-encoding': 'gzip',
                 }
 
