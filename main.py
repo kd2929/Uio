@@ -664,7 +664,7 @@ async def account_login(bot: Client, m: Message):
                 headers1 = {
                     'User-Agent': 'ExoPlayerDemo/1.4.39.5 (Linux;Android 11) ExoPlayerLib/2.14.1',
                     'Accept-Encoding': 'gzip',
-                    'Host': 'videos.classplusapp.com',
+                    'Host': 'api.classplusapp.com',
                     'Connection': 'Keep-Alive',
                 }
 
@@ -673,22 +673,22 @@ async def account_login(bot: Client, m: Message):
                 response2 = (response1.text).split("\n")
                 for quality in response2:
                     if raw_text2 in str(quality):
-                        qu = response2[1 + response2.index(quality)]
+                        qu = 1 + response2.index(quality)
                         break
                     else:
-                        qu = response2[3]
+                        qu = 2
                      
                    
                      
                 
-                url01 = a.split("?")[0].split("/")
-                del url01[-1]
-                url02 = url01.append(qu)
-                url1 = "/".join(url02)
+                #url01 = a.split("?")[0].split("/")
+                #del url01[-1]
+                #url02 = url01.append(qu)
+                #url1 = "/".join(url02)
                 
     
                 
-                #url1 = (response1.text).split("\n")[qu]
+                url1 = (response1.text).split("\n")[qu]
                             
 #                 url1 = b
             else:
