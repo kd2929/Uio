@@ -646,7 +646,7 @@ async def account_login(bot: Client, m: Message):
             elif "videos" in url:
                 list01 = url.replace("m3u8" , "").split("/")
                 last01 = list01.pop()
-                if len(list02[-1])>8:
+                if len(list01[-1])>8:
                     last02 = "video/" + last01 + "-9cd8875b46b06280daebef189d795873-video-fd.m3u8"
                     list01.append(last02)
                 else:
