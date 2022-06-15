@@ -644,14 +644,14 @@ async def account_login(bot: Client, m: Message):
                 list01[-1] = "stream_1/stream.m3u8"
                 url1 = "/".join(list01)
             elif "videos" in url:
-                list02 = url.replace("m3u8" , "").split("/")
+                list01 = url.replace("m3u8" , "").split("/")
                 last01 = list02.pop()
                 if len(list02[-1])>8:
-                    last02 = "video" + last01 + "-9cd8875b46b06280daebef189d795873-video-fd.m3u8"
-                    list02.append(last02)
+                    last02 = "video/" + last01 + "-9cd8875b46b06280daebef189d795873-video-fd.m3u8"
+                    list01.append(last02)
                 else:
-                    last03 = "videos" + last01 + "-33948330.mp4.m3u8"
-                    list02.append(last03)
+                    last02 = "videos/" + last01 + "-33948330.mp4.m3u8"
+                    list01.append(last02)
                 url1 = "/".join(list02)
                 
 #                 url1 = b
