@@ -652,7 +652,7 @@ async def account_login(bot: Client, m: Message):
                 else:
                     last02 = "videos/" + last01 + "-33948330.mp4.m3u8"
                     list01.append(last02)
-                url1 = "/".join(list02)
+                url1 = "/".join(list01)
                 
 #                 url1 = b
             else:
