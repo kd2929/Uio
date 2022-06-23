@@ -13,7 +13,7 @@ from pyrogram.types import Message
 from pyrogram import Client, filters
 import tgcrypto
 from p_bar import progress_bar
-from details import api_id, api_hash, bot_token , auth_users , sudo_groups
+from details import api_id, api_hash, bot_token
 from subprocess import getstatusoutput
 import helper
 import logging
