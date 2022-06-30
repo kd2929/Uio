@@ -1,4 +1,5 @@
-import pyrogram
+import pyrogram(
+from signal import signal, SIGINT
 from pyrogram.errors.exceptions.bad_request_400 import StickerEmojiInvalid
 import requests
 import json
