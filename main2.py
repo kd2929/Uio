@@ -573,7 +573,7 @@ async def adda_pdf(bot: Client, m: Message):
     except Exception as e:
         await m.reply_text(e)
     await m.reply_text("Done")
-    
+  
     
 @bot.on_message(filters.command(["jw"])&   (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
@@ -642,16 +642,16 @@ async def account_login(bot: Client, m: Message):
             
             if "cpcdn" in url:
                 list01 = url.split("/")
-                list01[-1] = "stream_1/stream.m3u8"
+                list01[-1] = "stream_2/stream.m3u8"
                 url1 = "/".join(list01)
             elif "videos" in url:
                 list01 = url.replace(".m3u8" , "").split("/")
                 last01 = list01.pop()
                 if len(list01[-1])>8:
-                    last02 = "video/" + last01 + "-9cd8875b46b06280daebef189d795873-video-fd.m3u8"
+                    last02 = "video/" + last01 + "-49aced368452fa67022235a5c4b7055c-video-fd.m3u8"
                     list01.append(last02)
                 else:
-                    last02 = "videos/" + last01 + "-33948330.mp4.m3u8"
+                    last02 = "videos/" + last01 + "-33948335.mp4.m3u8"
                     list01.append(last02)
                 url1 = "/".join(list01)
                 
