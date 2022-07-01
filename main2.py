@@ -641,9 +641,12 @@ async def account_login(bot: Client, m: Message):
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@","").replace("*","").replace(".","").strip()
             
             if "cpcdn" in url:
-                list01 = url.split("/")
-                list01[-1] = "stream_2/stream.m3u8"
-                url1 = "/".join(list01)
+                if "playlist" in url:
+                    url1 = url.replace("playlist", "360p")
+                else:
+                    list01 = url.split("/")
+                    list01[-1] = "stream_2/stream.m3u8"
+                    url1 = "/".join(list01)
             elif "videos" in url:
                 list01 = url.replace(".m3u8" , "").split("/")
                 last01 = list01.pop()
@@ -711,7 +714,6 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("Done")     
 bot.run()
-
 
 
 
