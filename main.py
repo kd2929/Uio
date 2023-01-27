@@ -49,7 +49,7 @@ sudo_groups = [ int(chat) for chat in os.environ.get("GROUPS").split(",")  if ch
 @bot.on_message(filters.command(["start"])&  (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
     
-    editable = await m.reply_text("Hi\nPress /pyro")
+    editable = await m.reply_text("Hi\nPress /txt")
 
 @bot.on_message(filters.command(["cancel"])&  (filters.chat(sudo_groups)))
 async def cancel(_, m):
@@ -63,10 +63,10 @@ async def restart_handler(_, m):
     await m.reply_text("Restarted!", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command(["pyro"])&   (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["txt"])&   (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
     
-    editable = await m.reply_text("Send txt file**")
+    editable = await m.reply_text("Send your txt file.**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
