@@ -318,10 +318,10 @@ async def account_login(bot: Client, m: Message):
 
 
             try:
-                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`"
+                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n\n**With Respect❤️ From Admins.**"
                 prog = await m.reply_text(Show)
-                cc = f'**Title »** {name1} {res}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}'
-                cc1 =f'**Title »** {name1} {res}.pdf\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}'
+                cc = f'{str(count).zfill(3)}.  {name1} {res}.mkv\n\n**Batch:** {raw_text0}\n\n**Downloaded By: Respected Admins❤️**'
+                cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By: Respected Admins❤️**'
 #                 if cmd == "pdf" or "drive" in url:
 #                     try:
 #                         ka=await helper.download(url,name)
@@ -467,9 +467,9 @@ async def account_login(bot: Client, m: Message):
                 cook = "cookie.txt"
                 
             name = f'{str(count).zfill(3)}) {name1}'    
-            Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n**rout** :- `{rout}`"
+            Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url}`\n\n**rout** :- `{rout}`\n\n**With Respect❤️ From Admins.**"
             prog = await m.reply_text(Show)
-            cc = f'**Title »** {name1}.mp4\n**Caption »** {raw_text5}\n**Index »** {str(count).zfill(3)}'
+            cc = f'{str(count).zfill(3)}.  {name1} {res}.mp4\n\n**Batch:** {raw_text0}\n\n**Downloaded By: Respected Admins❤️**'
             
             cmd = f'yt-dlp -o "{name}.mp4" --cookies {cook} "{url}"'
             try:
