@@ -61,13 +61,13 @@ async def cancel(_, m):
     return
 @bot.on_message(filters.command("restart")&   (filters.chat(sudo_groups)))
 async def restart_handler(_, m):
-    await m.reply_text("Restarted!", True)
+    await m.reply_text("Restarted!🙄", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 @bot.on_message(filters.command(["txt"])&   (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
     
-    editable = await m.reply_text("Send your txt file.**")
+    editable = await m.reply_text("Send your txt file.🤗**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -84,7 +84,7 @@ async def account_login(bot: Client, m: Message):
         os.remove(x)
         # print(len(links))
     except:
-        await m.reply_text("Invalid file input.")
+        await m.reply_text("Invalid file input.🥲")
         os.remove(x)
         return
 
@@ -99,7 +99,7 @@ async def account_login(bot: Client, m: Message):
         arg = 0
     
     
-    editable = await m.reply_text("**Enter Title**")
+    editable = await m.reply_text("**Enter Batch Name**")
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
     
@@ -319,10 +319,10 @@ async def account_login(bot: Client, m: Message):
 
 
             try:
-                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n\n**With Respect❤️ From Admins**"
+                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n\n**With ❤️ From Admins**"
                 prog = await m.reply_text(Show)
-                cc = f'{str(count).zfill(3)}.  {name1} {res}.mkv\n\n**Batch:** {raw_text0}\n\n**Downloaded By: Respected Admins❤️**'
-                cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By: Respected Admins❤️**'
+                cc = f'{str(count).zfill(3)}.  {name1} {res}.mkv\n\n**Batch:** {raw_text0}\n\n**Downloaded By:** Respected Admins❤️'
+                cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By:** Respected Admins❤️'
 #                 if cmd == "pdf" or "drive" in url:
 #                     try:
 #                         ka=await helper.download(url,name)
@@ -347,10 +347,10 @@ async def account_login(bot: Client, m: Message):
                         ka=await helper.aio(url,name)
                         await prog.delete (True)
                         time.sleep(1)
-                        reply = await m.reply_text(f"Uploading - ```{name}```")
+                        reply = await m.reply_text(f"Uploading - ```{name}```\n\n**With ❤️ From Admins**")
                         time.sleep(1)
                         start_time = time.time()
-                        await m.reply_document(ka, caption=f'**Title »** {name1} {res}.pdf\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}')
+                        await m.reply_document(ka, caption=f'{str(count).zfill(3)}. {name1} {res}.pdf\n\nBatch: {raw_text0}\n\n**Downloaded By:** Respected Admins❤️')
                         count+=1
                         # time.sleep(1)
                         await reply.delete (True)
@@ -369,7 +369,7 @@ async def account_login(bot: Client, m: Message):
                     time.sleep(1)
 
             except Exception as e:
-                await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`")
+                await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n\n**With ❤️ From Admins**")
                 continue
 
 
@@ -413,7 +413,7 @@ async def account_login(bot: Client, m: Message):
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
     
-    editable2 = await m.reply_text("**Enter Title**")
+    editable2 = await m.reply_text("**Enter Batch Name**")
     input5: Message = await bot.listen(editable.chat.id)
     raw_text5 = input5.text    
     
@@ -479,7 +479,7 @@ async def account_login(bot: Client, m: Message):
                 filename = f"{name}.mp4"
                 subprocess.run(f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"', shell=True)
                 await prog.delete (True)
-                reply = await m.reply_text(f"Uploading - ```{name}```")
+                reply = await m.reply_text(f"Uploading - ```{name}```\n\n**With ❤️ From Admins**")
                 try:
                     if thumb == "no":
                         thumbnail = f"{filename}.jpg"
