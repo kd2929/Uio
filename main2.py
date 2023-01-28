@@ -57,7 +57,7 @@ async def cancel(_, m):
     editable = await m.reply_text("Canceling All process Plz wait")
     global cancel
     cancel = True
-    await editable.edit("cancled")
+    await editable.edit("cancled😡")
     return
 @bot.on_message(filters.command("restart")&   (filters.chat(sudo_groups)))
 async def restart_handler(_, m):
@@ -322,14 +322,14 @@ async def account_login(bot: Client, m: Message):
                 Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n\n**With ❤️ From Admins**"
                 prog = await m.reply_text(Show)
                 cc = f'{str(count).zfill(3)}.  {name1} {res}.mkv\n\n**Batch:** {raw_text0}\n\n**Downloaded By:** Respected Admins❤️'
-                cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By:** Respected Admins❤️'
+                cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By:**Respected Admins❤️'
 #                 if cmd == "pdf" or "drive" in url:
 #                     try:
 #                         ka=await helper.download(url,name)
 #                         await prog.delete (True)
 #                         time.sleep(1)
 #                         # await helper.send_doc(bot,m,cc,ka,cc1,prog,count,name)
-#                         reply = await m.reply_text(f"Uploading - `{name}`")
+#                         reply = await m.reply_text(f"Uploading - `{name}`\n\n**With ❤️ From Admins.**")
 #                         time.sleep(1)
 #                         start_time = time.time()
 #                         await m.reply_document(ka,caption=cc1)
@@ -347,10 +347,10 @@ async def account_login(bot: Client, m: Message):
                         ka=await helper.aio(url,name)
                         await prog.delete (True)
                         time.sleep(1)
-                        reply = await m.reply_text(f"Uploading - ```{name}```\n\n**With ❤️ From Admins**")
+                        reply = await m.reply_text(f"Uploading - ```{name}```\n\n**With ❤️ From Admins.**")
                         time.sleep(1)
                         start_time = time.time()
-                        await m.reply_document(ka, caption=f'{str(count).zfill(3)}. {name1} {res}.pdf\n\nBatch: {raw_text0}\n\n**Downloaded By:** Respected Admins❤️')
+                        await m.reply_document(ka, caption=f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By:**Respected Admins❤️')
                         count+=1
                         # time.sleep(1)
                         await reply.delete (True)
