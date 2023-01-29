@@ -98,7 +98,8 @@ async def restart_handler(_, m):
 @bot.on_message(filters.command(["txt"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
 
-    editable = await m.reply_text("Send your txt file.🤗**")
+    editable = await m.reply_text("**Hello DeAr,** I am **Text Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer: HeArt🖤**\n**Language:**Python🔥\n\nNow Send Your **TXT File.**
+")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -401,17 +402,18 @@ async def account_login(bot: Client, m: Message):
                     time.sleep(1)
 
             except Exception as e:
-                await m.reply_text(f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n\n**With ❤️ From Admins**")
+                await m.reply_text(f"**downloading failed **\n{str(e)}\n**Name** - {name}\n**Link** - `{url}`\n\n**With ❤️ From Admins**")
                 continue
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("Done")
+    await m.reply_text("Done.")
 
 
 @bot.on_message(filters.command(["top"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Hi im Topranker dl**")
+    editable = await m.reply_text(f"**Hello DeAr,** I am **TopRankers Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer: HeArt🖤**\n\nNow Send Your **TXT File.**
+")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -426,7 +428,7 @@ async def account_login(bot: Client, m: Message):
         os.remove(x)
         # print(len(links))
     except:
-        await m.reply_text("Invalid file input.")
+        await m.reply_text("Invalid file input.🥲")
         os.remove(x)
         return
 
