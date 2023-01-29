@@ -1,1 +1,5 @@
 .heroku
+.env
+*.mkv
+*.session*
+__pycache__
