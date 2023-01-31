@@ -98,7 +98,7 @@ async def restart_handler(_, m):
 @bot.on_message(filters.command(["txt"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
 
-    editable = await m.reply_text(" **Hello DeAr,** I am Text Downloader Bot.\nI can download videos from text file one by one.\n\n**Developer:** HeArt🖤 \n**Language:**Python\n\nNow Send Your **TXT File**\n")
+    editable = await m.reply_text(" **Hello DeAr,** I am Text Downloader Bot.\nI can download videos from text file one by one.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nNow Send Your **TXT File**\n")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -750,12 +750,12 @@ async def account_login(bot: Client, m: Message):
 
 
 
-@bot.on_message(filters.command(["cw"]))
+@bot.on_message(filters.command(["heArt"]))
 async def start(bot, update):
       await update.reply_text("Hi i am **Careerwill Downloader**.\n\n"
                                "**NOW:-** "
                                
-                                      "Press **/heArt** to continue..\n\n")
+                                      "Press **/cw** to continue..\n\n")
                              
 
 ACCOUNT_ID = "6206459123001"
@@ -775,7 +775,7 @@ info= {
     "email":"",
 }
 
-@bot.on_message(filters.command(["heArt"])& ~filters.edited)
+@bot.on_message(filters.command(["cw"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
         "**Hello DeAr,** I am **Careerwill Downloader Bot.**\nI can download videos of Careerwill App.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nSend **ID & Password** in this manner otherwise bot will not respond.\n\nSend like this:-  **ID*Password**"
