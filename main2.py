@@ -77,7 +77,7 @@ bot = Client(
 @bot.on_message(filters.command(["start"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
 
-    editable = await m.reply_text("**Hellow deAr,** i am here for multipurpose & in **under construction.**\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\n**All running commands are:-**\n\n/txt\n/adda_pdf\n/jw\n/top\n/cw\n/pw\n\n**BOT IS IN  UNDERCONSTRUCTION.**\n")
+    editable = await m.reply_text("**Hellow deAr,** i am here for multipurpose & in **under construction.**\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\n**All running commands are:-**\n\n/txt\n/adda_pdf\n/jw\n/heArt\n/top\n/cw\n/pw\n\n**BOT IS IN  UNDERCONSTRUCTION.**\n")
 
 
 @bot.on_message(filters.command(["cancel"]) & (filters.chat(sudo_groups)))
@@ -744,7 +744,25 @@ async def account_login(bot: Client, m: Message):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 #   CAREERWILL DOWNLOADER  BOT 
+
+
+
+
+
+
+
 
 
 
@@ -778,7 +796,7 @@ info= {
 @bot.on_message(filters.command(["cw"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
-        "**Hello DeAr,** I am **Careerwill Downloader Bot.**\nI can download videos of Careerwill App.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nSend **ID & Password** in this manner otherwise bot will not respond.\n\nSend like this:-  **ID*Password**"
+        "**Hello DeAr,** I am **Careerwill Downloader Bot.**\nI can download videos of Careerwill App.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nSend **ID & Password** in this manner otherwise bot will not respond.\n\nSend like this:-  **ID*Password**\n\n**BOT IS IN UNDERCONSTRUCTION.**"
     )
 
     input1: Message = await bot.listen(editable.chat.id)
@@ -1072,16 +1090,27 @@ bot.run()
 
 
 
+
+
+
+
+
+
 #  Physics Wallah Downloader bot 
 
 
 
 
 
-@bot.on_message(filters.command(["cw"])& ~filters.edited)
+
+
+
+
+
+@bot.on_message(filters.command(["pw"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
-        "**Hello DeAr,** I am **Careerwill Downloader Bot.**\nI can download videos of Careerwill App.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nSend **ID & Password** in this manner otherwise bot will not respond.\n\nSend like this:-  **ID*Password**"
+        "**Hello deAr,** i am **Physics Wallah** downloader bot.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nNow send your **Mobile number.**\n\n**BOT IS UNDER CONSTRUCTION.**\n"
     )
     input1: Message = await bot.listen(editable.chat.id)
     raw_text1=str(input1.text)
