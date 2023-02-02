@@ -77,7 +77,7 @@ bot = Client(
 @bot.on_message(filters.command(["start"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
 
-    editable = await m.reply_text("**Hellow deAr,** i am here for multipurpose & in **under construction.**\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\n**All running commands are:-**\n\n/pdf\n/adda_pdf\n/jw\n/top\n/cw\n/pw\n\n**BOT IS IN  UNDERCONSTRUCTION.**\n")
+    editable = await m.reply_text("**Hellow deAr,** i am here for multipurpose & in **under construction.**\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\n**All running commands are:-**\n\n/txt\n/adda_pdf\n/jw\n/top\n/cw\n/pw\n\n**BOT IS IN  UNDERCONSTRUCTION.**\n")
 
 
 @bot.on_message(filters.command(["cancel"]) & (filters.chat(sudo_groups)))
@@ -351,7 +351,7 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv "{url}" -o "{name}.%(ext)s"'
 
             try:
-                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-**\n `{url}`\n\n**With ❤️ From Admins**"
+                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-**\n`{url}`\n\n**With ❤️ From Admins**"
                 prog = await m.reply_text(Show)
                 cc = f'{str(count).zfill(3)}.  {name1} {res}.mkv\n\n**Batch:** {raw_text0}\n\n**Downloaded By:** Respected Admins❤️'
                 cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By:**Respected Admins❤️'
@@ -411,7 +411,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["top"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Hello DeAr,** I am **TopRankers Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer: HeArt🖤**\n\nNow Send Your **TXT File.**")
+    editable = await m.reply_text(f"**Hello DeAr,** I am **TopRankers Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nNow Send Your **TXT File.**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -1078,13 +1078,11 @@ bot.run()
 
 
 
-
-
-@bot.on_message(filters.command(["pw"]))
+@bot.on_message(filters.command(["cw"])& ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
-        "**Hello deAr,** i am **Physics Wallah** downloader bot.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nNow send your **Mobile number.**\n\n**BOT IS UNDER CONSTRUCTION.**\n"
-    )  
+        "**Hello DeAr,** I am **Careerwill Downloader Bot.**\nI can download videos of Careerwill App.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nSend **ID & Password** in this manner otherwise bot will not respond.\n\nSend like this:-  **ID*Password**"
+    )
     input1: Message = await bot.listen(editable.chat.id)
     raw_text1=str(input1.text)
     
