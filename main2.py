@@ -77,7 +77,7 @@ bot = Client(
 @bot.on_message(filters.command(["start"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
 
-    editable = await m.reply_text("Hi\nPress /txt")
+    editable = await m.reply_text("**Hellow deAr,** i am here for multipurpose & in **under construction.**\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\n**All running commands are:-**\n\n/pdf\n/adda_pdf\n/jw\n/top\n/cw\n/pw\n\n**BOT IS IN  UNDERCONSTRUCTION.**\n")
 
 
 @bot.on_message(filters.command(["cancel"]) & (filters.chat(sudo_groups)))
@@ -351,7 +351,7 @@ async def account_login(bot: Client, m: Message):
                 cmd = f'yt-dlp -f "{ytf}+bestaudio" --hls-prefer-ffmpeg --no-keep-video --remux-video mkv "{url}" -o "{name}.%(ext)s"'
 
             try:
-                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-** `{url}`\n\n**With ❤️ From Admins**"
+                Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-**\n `{url}`\n\n**With ❤️ From Admins**"
                 prog = await m.reply_text(Show)
                 cc = f'{str(count).zfill(3)}.  {name1} {res}.mkv\n\n**Batch:** {raw_text0}\n\n**Downloaded By:** Respected Admins❤️'
                 cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By:**Respected Admins❤️'
@@ -540,7 +540,7 @@ async def account_login(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["adda_pdf"]))
 async def adda_pdf(bot: Client, m: Message):
-    editable = await m.reply_text(f"**Hi im Pdf Adda pdf dl**")
+    editable = await m.reply_text(f"**Hi im Pdf Adda pdf dl**\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nNow send your file to download **ADDA PDFs**\n")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -555,7 +555,7 @@ async def adda_pdf(bot: Client, m: Message):
         os.remove(x)
         # print(len(links))
     except:
-        await m.reply_text("Invalid file input.")
+        await m.reply_text("Invalid file input.🥲")
         os.remove(x)
         return
 
@@ -605,7 +605,7 @@ async def adda_pdf(bot: Client, m: Message):
 
 @bot.on_message(filters.command(["jw"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text("Send txt file**")
+    editable = await m.reply_text("**Hellow deAr,**\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\n**Send txt file:-**")
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -622,7 +622,7 @@ async def account_login(bot: Client, m: Message):
         os.remove(x)
         # print(len(links))
     except:
-        await m.reply_text("Invalid file input.")
+        await m.reply_text("Invalid file input.🥲")
         os.remove(x)
         return
 
@@ -689,7 +689,7 @@ async def account_login(bot: Client, m: Message):
                 url1 = url
 
             name = f'{str(count).zfill(3)}) {name1}'
-            Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
+            Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-**\n`{url1}`"
             prog = await m.reply_text(Show)
             cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}'
             if "pdf" in url:
