@@ -4,6 +4,7 @@ requests
 pyromod==1.5
 yt-dlp
 ffmpeg
+psutil
 lxml
 bs4
 aiohttp
