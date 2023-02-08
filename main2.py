@@ -1102,17 +1102,18 @@ bot.run()
 
 
 
+@bot.on_message(filters.command(["start"]))
+async def start(bot, update):
+       await update.reply_text("Hi i am **physics Downloader**.\n\n"
+                              "**NOW:-** "
+                                       
+                                       "Press **/login** to continue..\n\n")
 
-
-
-
-
-
-@bot.on_message(filters.command(["pw"])& ~filters.edited)
+@bot.on_message(filters.command(["pw"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
         "**Hello deAr,** i am **Physics Wallah** downloader bot.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nNow send your **Mobile number.**\n\n**BOT IS UNDER CONSTRUCTION.**\n"
-    )
+    )  
     input1: Message = await bot.listen(editable.chat.id)
     raw_text1=str(input1.text)
     
@@ -1143,5 +1144,11 @@ a=requests.post(url, headers=headers, data=data)
 
 bot.run()
 
+
+
+
+
+
+    
 
 
