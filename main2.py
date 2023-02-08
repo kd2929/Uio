@@ -1102,12 +1102,12 @@ bot.run()
 
 
 
-@bot.on_message(filters.command(["start"]))
+@bot.on_message(filters.command(["heArt"]))
 async def start(bot, update):
        await update.reply_text("Hi i am **physics Downloader**.\n\n"
                               "**NOW:-** "
                                        
-                                       "Press **/login** to continue..\n\n")
+                                       "Press **/pw** to continue..\n\n")
 
 @bot.on_message(filters.command(["pw"]))
 async def account_login(bot: Client, m: Message):
