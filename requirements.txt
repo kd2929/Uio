@@ -2,7 +2,7 @@ pyrogram==1.4.16
 tgcrypto
 requests
 pyromod==1.5
-yt-dlp==2023.02.17
+Git+https://github.com/mrinvisible7/yt-dlp
 ffmpeg
 psutil
 lxml
