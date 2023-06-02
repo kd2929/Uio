@@ -78,7 +78,7 @@ bot = Client(
 @bot.on_message(filters.command(["start"]) & (filters.chat(sudo_groups)))
 async def account_login(bot: Client, m: Message):
 
-    editable = await m.reply_text("**Hellow deAr,** i am here for multipurpose & in **under construction.**\n\n**Developer:** Black Adam🖤 \n**Language:**🔥Python\n\n**All running commands are:-**\n\n/txt\n/adda_pdf\n/pro_jw\n/Black Adam \n/top\n/cw\n/pw\n\n**BOT IS IN  UNDERCONSTRUCTION.**\n")
+    editable = await m.reply_text("**Hellow deAr,** i am here for multipurpose & in **under construction.**\n\n**Developer:** Black Adam🖤 \n**Language:**🔥Python\n\n**All running commands are:-**\n\n/txt\n/adda_pdf\n/jw\n/Black Adam \n/top\n/cw\n/pw\n\n**BOT IS IN  UNDERCONSTRUCTION.**\n")
 
 
 @bot.on_message(filters.command(["cancel"]) & (filters.chat(sudo_groups)))
@@ -604,7 +604,7 @@ async def adda_pdf(bot: Client, m: Message):
     await m.reply_text("Done")
 
 
-@bot.on_message(filters.command(["pro_jw"]))
+@bot.on_message(filters.command(["jw"]))
 async def account_login(bot: Client, m: Message):
     user = m.from_user.id if m.from_user is not None else None
     if user is not None and user not in sudo_users:
