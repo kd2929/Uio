@@ -133,7 +133,7 @@ async def account_login(bot: Client, m: Message):
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
     
-    await m.reply_text("**Enter resolution**")
+    await m.reply_text("**Downloaded By**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
 
