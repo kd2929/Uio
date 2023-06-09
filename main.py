@@ -608,180 +608,308 @@ async def adda_pdf(bot: Client, m: Message):
         await m.reply_text(e)
     await m.reply_text("Done")
 
+@bot.on_message(filters.command("jw"))
 
-@bot.on_message(filters.command(["jw"]))
 async def account_login(bot: Client, m: Message):
+
     editable = await m.reply_text("Hello Bruh **I am jw Downloader Bot**. ")
+
     input: Message = await bot.listen(editable.chat.id)
+
     x = await input.download()
+
     await input.delete(True)
 
     path = f"./downloads/{m.chat.id}"
 
     try:
+
         with open(x, "r") as f:
+
             content = f.read()
+
         content = content.split("\n")
+
         links = []
+
         for i in content:
+
             links.append(i.split(":", 1))
+
         os.remove(x)
+
         # print(len(links))
+
     except:
+
         await m.reply_text("Invalid file input.")
+
         os.remove(x)
+
         return
 
     editable = await m.reply_text(
+
         f"Total links found are **{len(links)}**\n\nSend From where you want to download initial is **0**"
+
     )
+
     input1: Message = await bot.listen(editable.chat.id)
+
     raw_text = input1.text
 
     try:
+
         arg = int(raw_text)
+
     except:
+
         arg = 0
 
     editable = await m.reply_text("**Enter Title**")
+
     input0: Message = await bot.listen(editable.chat.id)
+
     raw_text0 = input0.text
 
     await m.reply_text("**Enter resolution**")
+
     input2: Message = await bot.listen(editable.chat.id)
+
     raw_text2 = input2.text
 
     editable4 = await m.reply_text(
+
         "Now send the **Thumb url**\nEg : ```https://telegra.ph/file/d9e24878bd4aba05049a1.jpg```\n\nor Send **no**"
+
     )
+
     input6 = message = await bot.listen(editable.chat.id)
+
     raw_text6 = input6.text
 
     thumb = input6.text
+
     if thumb.startswith("http://") or thumb.startswith("https://"):
+
         getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
+
         thumb = "thumb.jpg"
+
     else:
+
         thumb == "no"
 
     if raw_text == '0':
+
         count = 1
+
     else:
+
         count = int(raw_text)
 
     try:
+
         for i in range(arg, len(links)):
 
             url = links[i][1]
+
             name1 = links[i][0].replace("\t", "").replace(":", "").replace(
+
                 "/",
+
                 "").replace("+", "").replace("#", "").replace("|", "").replace(
+
                     "@", "").replace("*", "").replace(".", "").strip()
 
-            if "jwplayer" in url:
+            if "classplusapp" in url:
+
                 headers = {
+
                     'Host': 'api.classplusapp.com',
-                    'x-access-token':
-                    'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6OTI5MDk0NTYsIm9yZ0lkIjozNDgzNzksInR5cGUiOjEsIm1vYmlsZSI6IjkxODg3MzU1NDk2MyIsIm5hbWUiOiJBZGFyc2ggQ2hhdWRoYXJ5ICIsImVtYWlsIjpudWxsLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6ImVuIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6ZmFsc2UsImZpbmdlcnByaW50SWQiOiI4YzUxYzYwMTk1NWUzMTg3NTJjODAwMmMxNTBhZTdlZiIsImlhdCI6MTY4NTY5OTY3MSwiZXhwIjoxNjg2MzA0NDcxfQ.qU6QcWj2f1oBvtFdL54scMXLSa5--1tjSow2sMt6cTvHnKLRmr-MTbEyxW4JnTaS&EIO',
+
+                    'x-access-token':'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6OTI5MDk0NTYsIm9yZ0lkIjozNDgzNzksInR5cGUiOjEsIm1vYmlsZSI6IjkxODg3MzU1NDk2MyIsIm5hbWUiOiJBZGFyc2ggQ2hhdWRoYXJ5ICIsImVtYWlsIjpudWxsLCJpc0ludGVybmF0aW9uYWwiOjAsImRlZmF1bHRMYW5ndWFnZSI6ImVuIiwiY291bnRyeUNvZGUiOiJJTiIsImNvdW50cnlJU08iOiI5MSIsInRpbWV6b25lIjoiR01UKzU6MzAiLCJpc0RpeSI6ZmFsc2UsImZpbmdlcnByaW50SWQiOiI4YzUxYzYwMTk1NWUzMTg3NTJjODAwMmMxNTBhZTdlZiIsImlhdCI6MTY4NTY5OTY3MSwiZXhwIjoxNjg2MzA0NDcxfQ.qU6QcWj2f1oBvtFdL54scMXLSa5--1tjSow2sMt6cTvHnKLRmr-MTbEyxW4JnTaS&EIO',
+
                     'user-agent': 'Mobile-Android',
+
                     'app-version': '1.4.37.1',
+
                     'api-version': '18',
+
                     'device-id': '5d0d17ac8b3c9f51',
+
                     'device-details':
+
                     '2848b866799971ca_2848b8667a33216c_SDK-30',
+
                     'accept-encoding': 'gzip',
+
                 }
 
                 params = (('url', f'{url}'), )
 
                 response = requests.get(
+
                     'https://api.classplusapp.com/cams/uploader/video/jw-signed-url',
+
                     headers=headers,
+
                     params=params)
-                # print(response.json())
+
                 a = response.json()['url']
+
                 # print(a)
 
-                headers1 = {
-                    'User-Agent':
-                    'ExoPlayerDemo/1.4.37.1 (Linux;Android 11) ExoPlayerLib/2.14.1',
-                    'Accept-Encoding': 'gzip',
-                    'Host': 'cdn.jwplayer.com',
-                    'Connection': 'Keep-Alive',
-                }
+                #print(a)
 
-                response1 = requests.get(f'{a}', headers=headers1)
+                url1 = str(a)
 
-                url1 = (response1.text).split("\n")[2]
+                #print(url1)
 
-#                 url1 = b
             else:
+
                 url1 = url
 
             name = f'{str(count).zfill(3)}) {name1}'
+
             Show = f"**Downloading:-**\n\n**Name :-** `{name}`\n\n**Url :-** `{url1}`"
+
             prog = await m.reply_text(Show)
-            cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Download BY** :- Group Admin'
-            if "pdf" in url:
-                cmd = f'yt-dlp -o "{name}.pdf" "{url1}"'
-            else:
-                cmd = f'yt-dlp -o "{name}.mp4" --no-keep-video --remux-video mkv "{url1}"'
+
+            cc = f'**Title »** {name1}.mkv\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Downloaded By** :- Black Adam'
+
+            cc1 = f'**Title »** {name1}.pdf\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Downloaded By** :- Black Adam'
+
             try:
-                download_cmd = f'yt-dlp "{url1}" -N 45 --external-downloader aria2c --external-downloader-args "-s16 -x16" --no-check-certificate --geo-bypass-country IN -S "res:{raw_text2}" -o "{name}.mkv"'
-                
-                os.system(download_cmd)
+
+              if "pdf" in url:
+
+                cmd1 = f'yt-dlp -o "{name}.pdf" "{url}"'
+
+                os.system(cmd1)
 
                 if os.path.isfile(f"{name}.mkv"):
+
                     filename = f"{name}.mkv"
+
                 elif os.path.isfile(f"{name}.mp4"):
+
                     filename = f"{name}.mp4"
+
                 elif os.path.isfile(f"{name}.pdf"):
+
                     filename = f"{name}.pdf"
 
+                await m.reply_document(filename, caption=cc)
+
+                os.remove(filename)
+
+                await prog.delete(True)
+
+              else:
+
+                cmd2 = f'yt-dlp "{url1}" -N 45 --external-downloader aria2c --external-downloader-args "-s16 -x16" --no-check-certificate --geo-bypass-country IN -S "res:{raw_text2}" -o "{name}.mkv"'
+
+                os.system(cmd2)
+
+                if os.path.isfile(f"{name}.mkv"):
+
+                    filename = f"{name}.mkv"
+
+                elif os.path.isfile(f"{name}.mp4"):
+
+                    filename = f"{name}.mp4"
+
+                elif os.path.isfile(f"{name}.pdf"):
+
+                    filename = f"{name}.pdf"
 
 #                 filename = f"{name}.mkv"
+
                 subprocess.run(
+
                     f'ffmpeg -i "{filename}" -ss 00:01:00 -vframes 1 "{filename}.jpg"',
+
                     shell=True)
+
                 await prog.delete(True)
+
                 reply = await m.reply_text(f"Uploading - ```{name}```")
+
                 try:
+
                     if thumb == "no":
+
                         thumbnail = f"{filename}.jpg"
+
                     else:
+
                         thumbnail = thumb
+
                 except Exception as e:
+
                     await m.reply_text(str(e))
 
                 dur = int(helper.duration(filename))
 
                 start_time = time.time()
-                if "pdf" in url1:
+
+                if "pdf" in url:
+
                     await m.reply_document(filename, caption=cc)
+
                 else:
+
                     await m.reply_video(filename,
+
                                         supports_streaming=True,
+
                                         height=720,
+
                                         width=1280,
+
                                         caption=cc,
+
                                         duration=dur,
+
                                         thumb=thumbnail,
+
                                         progress=progress_bar,
+
                                         progress_args=(reply, start_time))
+
                 count += 1
+
                 os.remove(filename)
 
                 os.remove(f"{filename}.jpg")
+
                 await reply.delete(True)
+
                 time.sleep(1)
+
             except Exception as e:
+
                 await m.reply_text(
+
                     f"**downloading failed ❌**\n{str(e)}\n**Name** - {name}\n**Link** - `{url}` & `{url1}`"
+
                 )
+
                 continue
+
     except Exception as e:
+
         await m.reply_text(e)
+
+    await m.reply_text('Done')
+
+        
+
     
+
+
+
     
 @bot.on_message(filters.command(["link"]))
 async def upload(bot: Client, m: Message):
