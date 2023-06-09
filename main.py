@@ -725,10 +725,9 @@ async def account_login(bot: Client, m: Message):
             if "pdf" in url:
                 cmd = f'yt-dlp -o "{name}.pdf" "{url1}"'
             else:
-                cmd = f'yt-dlp -o "{name}.mp4" --no-keep-video --remux-video mkv "{url1}"'
+                cmd = f'yt-dlp "{url1}" -N 45 --external-downloader aria2c --external-downloader-args "-s16 -x16" --no-check-certificate --geo-bypass-country IN -S "res:{raw_text2}" -o "{name}.mkv"'
             try:
-                download_cmd = f'yt-dlp "{url1}" -N 45 --external-downloader aria2c --external-downloader-args "-s16 -x16" --no-check-certificate --geo-bypass-country IN -S "res:{raw_text2}" -o "{name}.mkv"'
-                
+                download_cmd =  f"{cmd} -R 25 --fragment-retries 25 --external-downloader aria2c --downloader-args 'aria2c: -x 16 -j 32'"                
                 os.system(download_cmd)
 
                 if os.path.isfile(f"{name}.mkv"):
