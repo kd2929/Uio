@@ -783,7 +783,7 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text(e)
     
     
-   @bot.on_message(filters.command(["link"]))
+@bot.on_message(filters.command(["link"]))
 async def upload(bot: Client, m: Message):
     editable = await m.reply_text('Send link in **Name&link** format to download')
     input9: Message = await bot.listen(editable.chat.id)
