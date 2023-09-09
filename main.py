@@ -776,7 +776,7 @@ async def account_login(bot: Client, m: Message):
 
             prog = await m.reply_text(Show)
 
-            cc = f'**Title »** {name1}.mp4\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Downloaded By** :- Bʟᴀᴄᴋ Ꭺᴅᴀᴍ️'
+            cc = f'**Title »** {name1}.mp4\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Downloaded By** :- Bʟᴀᴄᴋ⚡Ꭺᴅᴀᴍ️'
 
             cc1 = f'**Title »** {name1}.pdf\n**Caption »** {raw_text0}\n**Index »** {str(count).zfill(3)}\n\n**Downloaded By** :- Bʟᴀᴄᴋ⚡Ꭺᴅᴀᴍ️'
 
