@@ -133,9 +133,9 @@ async def account_login(bot: Client, m: Message):
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
     
-    await m.reply_text("**Downloaded By**")
-    input3: Message = await bot.listen(editable.chat.id)
-    raw_text3 = input3.text
+    await m.reply_text("**Enter Date 🌹**")
+    input4: Message = await bot.listen(editable.chat.id)
+    raw_text4 = input4.text
 
     await m.reply_text("**Enter resolution**")
     input2: Message = await bot.listen(editable.chat.id)
@@ -359,8 +359,8 @@ async def account_login(bot: Client, m: Message):
             try:
                 Show = f"**Downloading:-**\n\n**Name :-** `{name}\nQuality - {raw_text2}`\n\n**Url :-**\n`{url}`\n\n**With ❤️ From Admins**"
                 prog = await m.reply_text(Show)
-                cc = f'{str(count).zfill(3)}.  {name1} {res}.mp4\n\n**Batch:** {raw_text0}\n\n**Downloaded By:**{raw_text3}️'
-                cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By:**{raw_text3}️'
+                cc = f'{str(count).zfill(3)}.  {name1} {res}.mp4\n\n**Batch:** {raw_text0}\n\n**Downloaded By:**{Bʟᴀᴄᴋ⚡Ꭺᴅᴀᴍ️}️'
+                cc1 = f'{str(count).zfill(3)}. {name1} {res}.pdf\n\n**Batch:** {raw_text0}\n\n**Downloaded By:**{Bʟᴀᴄᴋ⚡Ꭺᴅᴀᴍ️}️'
 #                 if cmd == "pdf" or "drive" in url:
 #                     try:
 #                         ka=await helper.download(url,name)
