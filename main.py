@@ -129,6 +129,11 @@ async def account_login(bot: Client, m: Message):
         arg = 0
 
     editable = await m.reply_text("**Enter Batch Name**")
+    print('eg.CDS Viraat 1.0,2024')
+    print('AFCAT GARUD 1 2024')
+    print('Mains Batch Course ID')
+    print('Foundation Batch Course')
+        
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
     
