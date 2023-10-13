@@ -128,13 +128,7 @@ async def account_login(bot: Client, m: Message):
     except:
         arg = 0
 
-    editable = await m.reply_text("**Enter Batch Name**")
-                                 ('eg.CDS Viraat 1.0,2024')
-                                 ('AFCAT GARUD 1 2024')
-                                 ('Mains Batch Course ID')
-                                 ('Foundation Batch Course')
-    
-        
+    editable = await m.reply_text("**Enter Batch Name**")                        
     input0: Message = await bot.listen(editable.chat.id)
     raw_text0 = input0.text
     
