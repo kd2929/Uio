@@ -132,7 +132,7 @@ async def account_login(bot: Client, m: Message):
                                  ('eg.CDS Viraat 1.0,2024')
                                  ('AFCAT GARUD 1 2024')
                                  ('Mains Batch Course ID')
-                                 ('Foundation Batch Course'))
+                                 ('Foundation Batch Course')
     
         
     input0: Message = await bot.listen(editable.chat.id)
