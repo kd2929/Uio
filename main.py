@@ -69,18 +69,14 @@ bot = Client(
     api_id=int(os.environ.get("API_ID")),
     api_hash=os.environ.get("API_HASH")
  )
- auth_users = [ int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != '']
- sudo_users = auth_users
- sudo_groups = [ int(chat) for chat in os.environ.get("GROUPS").split(",")  if chat != '']
-
-
-@bot.on_message(filters.command(["start"]) & (filters.chat(sudo_groups)))
+ 
+@bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
 
     editable = await m.reply_text("**Hellow deAr,** i am here for multipurpose & in **under construction.**\n\n**Developer:** Bʟᴀᴄᴋ⚡Ꭺᴅᴀᴍ️ \n**Language:**🔥Python\n\n**All running commands are:-**\n\n/txt\n/adda_pdf\n/jw\n/Link\n/top\n/cw\n/pw\n\n**BOT IS IN  UNDERCONSTRUCTION.**\n")
 
 
-@bot.on_message(filters.command(["cancel"]) & (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["cancel"]))
 async def cancel(_, m):
     editable = await m.reply_text("Canceling All process Plz wait")
     global cancel
@@ -89,13 +85,13 @@ async def cancel(_, m):
     return
 
 
-@bot.on_message(filters.command("restart") & (filters.chat(sudo_groups)))
+@bot.on_message(filters.command("restart"))
 async def restart_handler(_, m):
     await m.reply_text("Restarted!🙄", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command(["txt"]) & (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["txt"]))
 async def account_login(bot: Client, m: Message):
 
     editable = await m.reply_text(" **Hello DeAr,** I am Text Downloader Bot.\nI can download videos from text file one by one.\n\n**Developer:** Bʟᴀᴄᴋ⚡Ꭺᴅᴀᴍ️ \n**Language:**🔥Python\n\nNow Send Your **TXT File**\n")
@@ -414,7 +410,7 @@ async def account_login(bot: Client, m: Message):
     await m.reply_text("Done.")
 
 
-@bot.on_message(filters.command(["top"]) & (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["top"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hello DeAr,** I am **TopRankers Downloader Bot.**\nI can download videos from text file one by one.\n\n**Developer:** HeArt🖤 \n**Language:**🔥Python\n\nNow Send Your **TXT File.**")
     input: Message = await bot.listen(editable.chat.id)
