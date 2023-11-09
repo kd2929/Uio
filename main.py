@@ -56,13 +56,6 @@ visionias_quality_dict = {
 
 visionias_url_extract_pattern = r"(https://.*?playlist.m3u8.*?)\""
 
-bot = Client(
-
-    "bot",
-    api_id=api_id,
-    api_hash=api_hash,
-    bot_token=bot_token)
-
  bot = Client(
     "bot",
     bot_token=os.environ.get("BOT_TOKEN"),
